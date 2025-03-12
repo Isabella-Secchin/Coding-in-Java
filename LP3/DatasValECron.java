@@ -49,7 +49,7 @@ public class Main{
             datas[j] = new Data(dia, mes, ano);
         }
         System.out.println("\nAs datas cadastradas são:");
-        for (int j = 0; j < i; j++) {
+        for (j = 0; j < i; j++){
             datas[j].exibirData();  // Call exibirData() for each Data object
         }
 
