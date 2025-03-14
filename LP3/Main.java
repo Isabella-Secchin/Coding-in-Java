@@ -32,13 +32,15 @@ class Data implements Comparable<Data>{
         System.out.printf("%02d/%02d/%04d\n", dia, mes, ano);
     }
     @Override
-    public int compareTo(Data outraData) {
-        if (this.ano != outraData.ano) {
-            return this.ano - outraData.ano;  // Compara os anos
-        } else if (this.mes != outraData.mes) {
-            return this.mes - outraData.mes;  // Compara os meses
-        } else {
-            return this.dia - outraData.dia;  // Compara os dias
+    public int compareTo(Data outraData){
+        if(this.ano != outraData.ano){
+            return this.ano - outraData.ano;  
+        }
+        else if(this.mes != outraData.mes){
+            return this.mes - outraData.mes; 
+        }
+        else{
+            return this.dia - outraData.dia;
         }
     }
 }
@@ -63,19 +65,19 @@ public class Main{
                 j--;
                 continue;
             }
-            if (dia < 1 || dia > 31){
+            if(dia < 1 || dia > 31){
                 System.out.println("Dia invalido!");
                 j--;
                 continue;
             }
-            if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30){
+            if((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30){
                 System.out.println("Dia invalido!");
                 j--;
                 continue;
             }
-            if (mes == 2){
+            if(mes == 2){
                 boolean bissexto = (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
-                if (dia > 29 || (dia == 29 && !bissexto)){
+                if(dia > 29 || (dia == 29 && !bissexto)){
                     System.out.println("Dia invalido!");
                     j--;
                     continue;
@@ -85,7 +87,7 @@ public class Main{
         }
         Arrays.sort(datas);
         System.out.println("\nAs datas cadastradas em ordem cronologica são:");
-        for (j = 0; j < i; j++) {
+        for (j = 0; j < i; j++){
             datas[j].exibirData();  
         }
         scanner.close();
