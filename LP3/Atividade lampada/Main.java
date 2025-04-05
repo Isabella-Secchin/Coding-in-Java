@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args){
-        PainelDeControle painel = new PainelDeControle(50);
+        PainelDeControle painel = new PainelDeControle(30);
     }
 }

@@ -6,12 +6,19 @@ public class Lampada{
     private int lim;
     private int pot;
 
-    //Construtor para gerar uma lampada:
+    //Construtores para gerar uma lampada:
     public Lampada(int pot, int lim){
         this.ligada = false;
         this.pot = pot;
         this.cont = 0;
         this.lim = lim;
+    }
+
+    public Lampada(){
+        this.ligada = false;
+        this.pot = 15;
+        this.cont = 0;
+        this.lim = 1000;
     }
 
     //Getters:
