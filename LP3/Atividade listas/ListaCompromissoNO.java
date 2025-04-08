@@ -21,27 +21,34 @@ public class ListaCompromissoNO{
     }
 
     public void desmarcarCompromisso(DataV5 data){
-        for(int i = 0; i <= cont; i++){
-            if(data == compromissos[i]){
-                compromissos[i] = null;
-                for( ; i <= cont; i++){
-                    compromissos[i] = compromissos[i + 1];
-                }
-                cont--;
-                System.out.printf("O compromisso foi desmarcado!");
-                return;
+        if(verificaCompromissoV2(data) != 0){
+            for(int i = verificaCompromissoV2(data); i <= cont; i++){
+                compromissos[i] = compromissos[i + 1];
             }
+            cont--;
+            System.out.printf("O compromisso foi desmarcado!");
         }
     }
 
     public boolean verificaCompromisso(DataV5 data){
         for(int i = 0; i <= cont; i++){
             if(data == compromissos[i]){
-                System.out.printf("Ja existe um compromisso nessa data!\n");
+                System.out.printf("Já existe um compromisso nessa data!\n");
                 return true;
             }
         }
+        System.out.printf("Nao existe um compromisso nessa data!\n");
         return false;
+    }
+
+    private int verificaCompromissoV2(DataV5 data){
+        for(int i = 0; i <= cont; i++){
+            if(data == compromissos[i]){
+                System.out.printf("Já existe um compromisso nessa data!\n");
+                return i;
+            }
+        }
+        return 0;
     }
 
     public void listarCompromissos(DataV5[] compromissos){
